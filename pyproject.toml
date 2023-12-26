@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "fastapi-checks"
+version = "0.1.0"
+description = "Utility package to run checks against FastAPI applications."
+authors = ["Alix Lahuec <alix.lahuec@onmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+fastapi-checks = "fastapi_checks.cli.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.10.4"
+fastapi = "0.95.2"
+pydantic = "1.10.13"
+typer = {extras = ["all"], version = "^0.9.0"}
+pycosmiconfig = "^8.3.6"
+dash = "^2.14.1"
+dash-bootstrap-components = "^1.5.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "7.2.1"
+ruff = "^0.1.9"
+coverage = "^7.3.4"
+syrupy = "^4.6.0"
+mypy = "^1.8.0"
+
+[tool.poetry.plugins.pytest11]
+fastapi-sqla = "fastapi_checks.testing.pytest_plugin"
+
+[tool.coverage.run]
+omit = ["app_example/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+
+[[tool.mypy.overrides]]
+module = [
+    "dash.*",
+    "dash_bootstrap_components.*",
+    "pycosmiconfig"
+]
+ignore_missing_imports = true
+
+[tool.fastapi_checks]
+app = "app_example.main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

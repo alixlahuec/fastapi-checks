@@ -1,0 +1,25 @@
+# serializer version: 1
+# name: test_routes_terminal
+  '''
+                ╷        ╷             ╷             ╷             ╷              
+                │        │             │             │ Dependency  │              
+    Route       │ Method │ Description │ Dependenci… │ marks       │ Security     
+  ╶─────────────┼────────┼─────────────┼─────────────┼─────────────┼─────────────╴
+    /resource/… │ GET    │ Get         │ RouterDep   │ misc        │              
+                │        │ resource -  │ Config      │             │              
+                │        │ Get_resour… │ some_depen… │             │              
+                │        │             │ ClassDep    │             │              
+                │        │             │ ClassDep    │             │              
+    /resource/… │ GET    │ Get         │ RouterDep   │ misc        │ myapp:some…  
+                │        │ resource -  │ Config      │             │              
+                │        │ Get_resour… │ ClassDep    │             │              
+                │        │             │ some_depen… │             │              
+                │        │             │ ClassDep    │             │              
+    /resource/… │ DELETE │ Delete      │ RouterDep   │ tenant_enf… │              
+                │        │ resource -  │ Config      │             │              
+                │        │ Delete_res… │ with_tenan… │             │              
+                │        │             │ ClassDep    │             │              
+                ╵        ╵             ╵             ╵             ╵              
+  
+  '''
+# ---

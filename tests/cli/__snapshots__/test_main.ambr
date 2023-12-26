@@ -1,0 +1,32 @@
+# serializer version: 1
+# name: test_command_help
+  '''
+                                                                                  
+   Usage: fastapi_checks [OPTIONS] COMMAND [ARGS]...                              
+                                                                                  
+   Run checks against a FastAPI application.                                      
+                                                                                  
+  ╭─ Options ────────────────────────────────────────────────────────────────────╮
+  │ *  --app                       PARSE_ENTRYPOINT  Location of the FastAPI     │
+  │                                                  app.                        │
+  │                                                  [required]                  │
+  │    --config                    FILE              Path to a config file. If   │
+  │                                                  none is provided,           │
+  │                                                  auto-detection will be      │
+  │                                                  used.                       │
+  │    --install-completion                          Install completion for the  │
+  │                                                  current shell.              │
+  │    --show-completion                             Show completion for the     │
+  │                                                  current shell, to copy it   │
+  │                                                  or customize the            │
+  │                                                  installation.               │
+  │    --help                                        Show this message and exit. │
+  ╰──────────────────────────────────────────────────────────────────────────────╯
+  ╭─ Commands ───────────────────────────────────────────────────────────────────╮
+  │ debug              Show debug information.                                   │
+  │ routes             List all API routes.                                      │
+  ╰──────────────────────────────────────────────────────────────────────────────╯
+  
+  
+  '''
+# ---
