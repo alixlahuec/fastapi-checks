@@ -2,6 +2,8 @@
 
 A small library that provides tooling to inspect and run tests against [FastAPI](https://github.com/tiangolo/fastapi) applications.
 
+[![codecov](https://codecov.io/github/alixlahuec/fastapi-checks/graph/badge.svg?token=CvAhnsWNf9)](https://codecov.io/github/alixlahuec/fastapi-checks)
+
 ## Usage
 
 ### CLI
