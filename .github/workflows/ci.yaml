@@ -31,11 +31,10 @@ jobs:
           make typecheck
 
       - id: tests
-        run: make test:cov
+        run: make test:ci
 
       - id: coverage
         uses: codecov/codecov-action@v3
         with:
           verbose: true
-          file: .coverage
           token: ${{ secrets.CODECOV_TOKEN }}
