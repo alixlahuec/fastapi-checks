@@ -1,5 +1,7 @@
 test:
 	poetry run pytest .
+test\:ci:
+	poetry run coverage run -m pytest && poetry run coverage lcov
 test\:cov:
 	poetry run coverage run -m pytest -vv && poetry run coverage report --skip-covered
 fixes:

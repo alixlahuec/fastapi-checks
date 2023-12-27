@@ -11,7 +11,7 @@ class RouterDep:
         self.some_param = some_param
 
     def __call__(self, config: Config = Depends()):
-        return config.some_api_key == self.some_param
+        return config.api_origin == self.some_param
 
 
 router = APIRouter(
@@ -26,7 +26,7 @@ class ClassDep:
         self.some_param = some_param
 
     def __call__(self, config: Config = Depends()):
-        return config.some_api_key == self.some_param
+        return config.api_origin == self.some_param
 
 
 @mark("misc")

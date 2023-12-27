@@ -1,0 +1,40 @@
+name: CI
+
+on: push
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        uses: actions/checkout@v4
+      - id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10.4'
+      - id: setup-poetry
+        uses: snok/install-poetry@v1.3.4
+        with:
+          version: 1.6.1
+      - id: cached-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      - id: install-dependencies
+        if: steps.cached-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction
+
+      - id: lint
+        run: |
+          make checks
+          make typecheck
+
+      - id: tests
+        run: make test:ci
+
+      - id: coverage
+        uses: codecov/codecov-action@v3
+        with:
+          verbose: true
+          token: ${{ secrets.CODECOV_TOKEN }}

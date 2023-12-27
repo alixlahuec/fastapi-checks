@@ -59,7 +59,11 @@ def test_dependency_humanized(dependency_instance):
 
 
 def test_dependency_no_mark(dependency_instance):
-    assert dependency_instance.mark is None
+    dep = dependency_instance
+    assert dep.mark is None
+    assert dep.tags_exclude_all(tags=["a"]) is True
+    assert dep.tags_include_all(tags=["b"]) is False
+    assert dep.tags_include(tags=["c"]) is False
 
 
 def test_dependency_with_mark(marked_dependency_instance):

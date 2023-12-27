@@ -43,10 +43,19 @@ class Dependency(BaseModel):
         return getattr(self.callable, MARK_METADATA_KEY, None)
     
     def tags_include_all(self, *, tags: Iterable[str] = {}) -> bool:
+        if self.mark is None:
+            return False
+
         return self.mark.predicate(tags_include_all=tags)
     
     def tags_exclude_all(self, *, tags: Iterable[str] = {}) -> bool:
+        if self.mark is None:
+            return True
+
         return self.mark.predicate(tags_exclude_all=tags)
     
     def tags_include(self, *, tags: Iterable[str] = {}) -> bool:
+        if self.mark is None:
+            return False
+
         return self.mark.predicate(tags_include=tags)
