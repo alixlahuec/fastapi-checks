@@ -51,7 +51,7 @@ def list_routes(
         return ", ".join(list(r.route.methods))
 
     def row_description(r):
-        return f"{r.route.description or r.route.name} - {r.operation_id}"
+        return f"{r.route.description or r.route.name}"
 
     def row_dependencies(r):
         dep_names = [dep.humanized for dep in r.unique_dependencies]

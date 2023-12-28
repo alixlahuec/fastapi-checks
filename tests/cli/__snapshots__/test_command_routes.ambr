@@ -6,18 +6,18 @@
     Route       │ Method │ Description │ Dependenci… │ marks       │ Security     
   ╶─────────────┼────────┼─────────────┼─────────────┼─────────────┼─────────────╴
     /resource/… │ GET    │ Get         │ RouterDep   │ misc        │              
-                │        │ resource -  │ Config      │             │              
-                │        │ Get_resour… │ some_depen… │             │              
+                │        │ resource    │ Config      │             │              
+                │        │             │ some_depen… │             │              
                 │        │             │ ClassDep    │             │              
                 │        │             │ ClassDep    │             │              
     /resource/… │ GET    │ Get         │ RouterDep   │ misc        │ myapp:some…  
-                │        │ resource -  │ Config      │             │              
-                │        │ Get_resour… │ ClassDep    │             │              
+                │        │ resource    │ Config      │             │              
+                │        │             │ ClassDep    │             │              
                 │        │             │ some_depen… │             │              
                 │        │             │ ClassDep    │             │              
     /resource/… │ DELETE │ Delete      │ RouterDep   │ tenant_enf… │              
-                │        │ resource -  │ Config      │             │              
-                │        │ Delete_res… │ with_tenan… │             │              
+                │        │ resource    │ Config      │             │              
+                │        │             │ with_tenan… │             │              
                 │        │             │ ClassDep    │             │              
                 ╵        ╵             ╵             ╵             ╵              
   

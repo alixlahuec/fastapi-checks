@@ -82,6 +82,7 @@ class Table(BaseModel):
                 # wrap cells contents
                 "whiteSpace": "normal",
                 "height": "auto",
+                "wordBreak": "break-word",
             },
             style_data_conditional=[col.html_style_data() for col in self.columns],
             style_header={
