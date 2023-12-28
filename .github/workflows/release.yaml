@@ -1,0 +1,45 @@
+name: Automated release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  bump:
+    concurrency: bump
+    name: Bump library version
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        uses: actions/checkout@v4
+        ref: master
+        with:
+          fetch-depth: 0
+      - id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10.4'
+
+      - id: semantic-release
+        uses: python-semantic-release/python-semantic-release@v8
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          root_options: "-vv"
+          commit: true
+          push: true
+          changelog: true
+          vcs_release: false
+
+      - id: gh-release
+        uses: ncipollo/release-action@v1.13.0
+        with:
+          generateReleaseNotes: true
+          makeLatest: true
+          name: "v${{ steps.semantic-release.outputs.tag }}"
+          tag: steps.semantic-release.outputs.tag
+          token: ${{ secrets.GH_RELEASE_TOKEN }}  # needed for the publish workflow to be triggered
+
+      - id: workflow-summary
+        run: echo "**Release version:** ${{ steps.gh-release.outputs.id }} ([link](${{ steps.gh-release.outputs.html_url}}))" >> $GITHUB_STEP_SUMMARY
