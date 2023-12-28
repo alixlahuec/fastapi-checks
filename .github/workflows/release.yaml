@@ -38,7 +38,7 @@ jobs:
           generateReleaseNotes: true
           makeLatest: true
           name: "v${{ steps.semantic-release.outputs.tag }}"
-          tag: steps.semantic-release.outputs.tag
+          tag: ${{ steps.semantic-release.outputs.tag }}
           token: ${{ secrets.GH_RELEASE_TOKEN }}  # needed for the publish workflow to be triggered
 
       - id: workflow-summary
