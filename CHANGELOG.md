@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## v0.1.3 (2023-12-28)
+
+* ci: add missing interpolation for release tag (#9) ([`ed399b2`](https://github.com/alixlahuec/fastapi-checks/commit/ed399b21f55551787bf0c91a1373e8255d0f056d))
+
 ## v0.1.2 (2023-12-28)
 
 * ci: add changelog template (#8) ([`0f62ed6`](https://github.com/alixlahuec/fastapi-checks/commit/0f62ed68e153ada66d1d6924f8e7f95af271f384))
