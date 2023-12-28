@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-checks"
-version = "0.1.1"
+version = "0.1.2"
 description = "Utility package to run checks against FastAPI applications."
 authors = ["Alix Lahuec <alix.lahuec@onmail.com>"]
 license = "MIT"
