@@ -1,14 +1,13 @@
 # CHANGELOG
 
 
+## v0.1.2 (2023-12-28)
+
+* ci: add changelog template (#8) ([`0f62ed6`](https://github.com/alixlahuec/fastapi-checks/commit/0f62ed68e153ada66d1d6924f8e7f95af271f384))
 
 ## v0.1.1 (2023-12-28)
 
-### Chore
-
 * chore(cli): polish output for routes (#2) ([`2b5c5c0`](https://github.com/alixlahuec/fastapi-checks/commit/2b5c5c007fecd4e775fc61ffb528a839456bee1c))
-
-### Ci
 
 * ci: adjust config for semantic-release (#7) ([`6cf8727`](https://github.com/alixlahuec/fastapi-checks/commit/6cf87276558b861c377112d57ab02922b6ff44dd))
 
@@ -22,11 +21,4 @@
 
 * ci: add workflow for linter &amp; tests (#1) ([`3b464d3`](https://github.com/alixlahuec/fastapi-checks/commit/3b464d30481a61182e4b7efaad89f54d5a1a2108))
 
-
 ## v0.1.0 (2023-12-28)
-
-### Unknown
-
-* Version 0.1.0 ([`a37ba14`](https://github.com/alixlahuec/fastapi-checks/commit/a37ba14f3a21705fa320a34448007480ab1ea844))
-
-* Initial commit ([`5754139`](https://github.com/alixlahuec/fastapi-checks/commit/5754139c6cae2d29575a20a307d91f5c063a20bb))
