@@ -14,9 +14,9 @@ jobs:
     steps:
       - id: checkout
         uses: actions/checkout@v4
-        ref: master
         with:
           fetch-depth: 0
+          ref: master
       - id: setup-python
         uses: actions/setup-python@v4
         with:
