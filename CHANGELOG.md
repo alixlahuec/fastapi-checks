@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## v0.1.5 (2024-01-28)
+
+* chore(config): update pyproject (#11) ([`f5217c5`](https://github.com/alixlahuec/fastapi-checks/commit/f5217c52222955e751e04ecd3b303b7583bafe4e))
+
 ## v0.1.4 (2024-01-24)
 
 * chore(deps): use dependency ranges (#10) ([`0fefd82`](https://github.com/alixlahuec/fastapi-checks/commit/0fefd8274649bf8282561125a319d41ceaf4c363))
