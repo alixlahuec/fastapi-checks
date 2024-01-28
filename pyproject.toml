@@ -5,6 +5,24 @@ description = "Utility package to run checks against FastAPI applications."
 authors = ["Alix Lahuec <alix.lahuec@onmail.com>"]
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/alixlahuec/fastapi-checks"
+keywords = ["fastapi", "testing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: FastAPI",
+    "Framework :: Pydantic",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Unit",
+    "Typing :: Typed"
+]
 
 [tool.poetry.scripts]
 fastapi-checks = "fastapi_checks.cli.main:app"
@@ -12,11 +30,13 @@ fastapi-checks = "fastapi_checks.cli.main:app"
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = ">=0.95"
-pydantic = "^1.10.13"
-typer = {extras = ["all"], version = ">=0.9.0"}
 pycosmiconfig = ">=8.3.6"
-dash = ">=2.14"
-dash-bootstrap-components = ">=1.5"
+pydantic = "^1.10.13"
+
+# CLI
+typer = {version = ">=0.9.0", extras = ["all"], optional = true}
+dash = {version = ">=2.14", optional = true}
+dash-bootstrap-components = {version = ">=1.5", optional = true}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.2.1"
@@ -25,8 +45,11 @@ coverage = "^7.3.4"
 syrupy = "^4.6.0"
 mypy = "^1.8.0"
 
+[tool.poetry.extras]
+cli = ["typer", "dash", "dash-bootstrap-components"]
+
 [tool.poetry.plugins.pytest11]
-fastapi-sqla = "fastapi_checks.testing.pytest_plugin"
+fastapi-checks = "fastapi_checks.testing.pytest_plugin"
 
 [tool.coverage.run]
 omit = ["app_example/*"]

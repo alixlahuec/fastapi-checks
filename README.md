@@ -1,8 +1,20 @@
-## Description
-
 A small library that provides tooling to inspect and run tests against [FastAPI](https://github.com/tiangolo/fastapi) applications.
 
 [![codecov](https://codecov.io/github/alixlahuec/fastapi-checks/graph/badge.svg?token=CvAhnsWNf9)](https://codecov.io/github/alixlahuec/fastapi-checks)
+
+## Installation
+
+```bash
+poetry add fastapi-checks # with poetry
+pip install fastapi-checks # with pip
+```
+
+### For CLI usage
+
+```bash
+poetry add fastapi-checks --extras "cli" # with poetry
+pip install fastapi-checks[cli] # with pip
+```
 
 ## Usage
 
